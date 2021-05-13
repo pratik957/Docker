@@ -1,0 +1,42 @@
+version: "2"
+services:
+  db:
+  
+  image: mysql:latest
+  
+  container_name: mysql-container
+
+  environment:
+         - MYSQL_ROOT_PASSWORD=root
+          - MYSQL_DATABASE=Davita
+      
+  volume:
+  
+  - mysql_volume:/var/lib/mysql
+  
+  networks:
+    - my_network
+    
+  
+  procedure-app-backend:
+    image: procedure:1.0
+    
+    container_name: procedure_app
+    
+    environment:
+        - RDS_HOSTNAME:mysql-container
+      
+    networks:
+    - my_network
+   
+    ports:
+    - "8080:8080"
+
+    depends_on:
+        - db
+            
+    volumes:
+      mysql_volume:
+    
+    networks:
+    my_network:
