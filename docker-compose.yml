@@ -3,13 +3,10 @@ services:
   db:
   
   image: mysql:latest
-  
   container_name: mysql-container
-
   environment:
          - MYSQL_ROOT_PASSWORD=root
           - MYSQL_DATABASE=Davita
-      
   volume:
   
   - mysql_volume:/var/lib/mysql
@@ -19,10 +16,8 @@ services:
     
   
   procedure-app-backend:
-    image: procedure:1.0
-    
+    image: procedure:1.0   
     container_name: procedure_app
-    
     environment:
         - RDS_HOSTNAME:mysql-container
       
@@ -39,4 +34,4 @@ services:
       mysql_volume:
     
     networks:
-    my_network:
+      my_network:
