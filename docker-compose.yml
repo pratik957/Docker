@@ -1,8 +1,8 @@
-version: "3"
+version: "2"
 services:
     db:  
        image: mysql:latest
-       container_name: mysql-container
+       container_name: mysql_container
        volumes:
             - mysql_volume:/var/lib/mysql
        networks:
