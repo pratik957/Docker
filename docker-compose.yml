@@ -9,9 +9,7 @@ services:
             - my_network     
        environment:
             - MYSQL_ROOT_PASSWORD=root
-            - MYSQL_DATABASE=Davita 
-       ports:
-            - "3306:3306"
+            - MYSQL_DATABASE=Davita
          
     procedure-app-backend:
        image: procedure:1.0
