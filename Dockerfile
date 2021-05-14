@@ -6,6 +6,6 @@ LABEL description="This is a spring boot application - Procedure app" version="1
 
 COPY target/*.jar app.jar
 
-ENV RDS_HOSTNAME mysql-container
+ENV RDS_HOSTNAME mysql_container
 
 CMD ["java", "-jar", "app.jar"]
