@@ -2,10 +2,10 @@ FROM openjdk:8-jdk-alpine
 
 MAINTAINER "pratik.tiwari@citiustech.com"
 
-LABEL description="This is a spring boot application - Procedure app" version="1.0"
+LABEL description="This is a spring boot Procedure application" version="1.0"
 
-COPY target/*.jar app.jar
+COPY target/*.jar procedure-0.0.1-SNAPSHOT.jar
 
-ENV RDS_HOSTNAME mysql_container
+ENV RDS_HOSTNAME mysql-container
 
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "procedure-0.0.1-SNAPSHOT.jar"]
