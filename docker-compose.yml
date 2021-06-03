@@ -23,7 +23,17 @@ services:
        ports:
             - "8080:8080"
         
-            
+    diagnosis-app-backend:
+       image: diagnosis:1.0
+       container_name: diagnosis_app
+       networks:
+            - my_network
+       environment:
+            - RDS_HOSTNAME=mysql_container
+       depends_on:
+            - db
+       ports:
+            - "8081:8080"        
 volumes:
     mysql_volume:
 
